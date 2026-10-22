@@ -1,0 +1,592 @@
+[
+  {
+    "nombre": "Periodo",
+    "extiende": [],
+    "atributos": [
+      {
+        "nombre": "desde",
+        "tipo": "Fecha",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "hasta",
+        "tipo": "Fecha",
+        "opcional": false,
+        "readonly": false
+      }
+    ]
+  },
+  {
+    "nombre": "Usuario",
+    "extiende": [],
+    "atributos": [
+      {
+        "nombre": "id",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": true
+      },
+      {
+        "nombre": "nombre",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "correo",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "telefono",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "rol",
+        "tipo": "Rol",
+        "opcional": false,
+        "readonly": false
+      }
+    ]
+  },
+  {
+    "nombre": "Articulo",
+    "extiende": [],
+    "atributos": [
+      {
+        "nombre": "id",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": true
+      },
+      {
+        "nombre": "nombre",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "descripcion",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "categoria",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "fotografias",
+        "tipo": "string[]",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "precioDiaCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "cargoDanoCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "valorReposicionCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "totalPiezas",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "activo",
+        "tipo": "boolean",
+        "opcional": false,
+        "readonly": false
+      }
+    ]
+  },
+  {
+    "nombre": "DetalleReserva",
+    "extiende": [],
+    "atributos": [
+      {
+        "nombre": "articuloId",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "nombre",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "cantidad",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "precioDiaCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "cargoDanoCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "valorReposicionCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "subtotalCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      }
+    ]
+  },
+  {
+    "nombre": "Cotizacion",
+    "extiende": [],
+    "atributos": [
+      {
+        "nombre": "periodo",
+        "tipo": "Periodo",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "dias",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "detalles",
+        "tipo": "DetalleReserva[]",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "rentaCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "depositoCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "totalInicialCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      }
+    ]
+  },
+  {
+    "nombre": "ResultadoPiezas",
+    "extiende": [],
+    "atributos": [
+      {
+        "nombre": "articuloId",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "buenas",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "danadas",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "faltantes",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      }
+    ]
+  },
+  {
+    "nombre": "SolicitudCancelacion",
+    "extiende": [],
+    "atributos": [
+      {
+        "nombre": "solicitadaEn",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "motivo",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "politica",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      }
+    ]
+  },
+  {
+    "nombre": "Reserva",
+    "extiende": [
+      "Cotizacion"
+    ],
+    "atributos": [
+      {
+        "nombre": "id",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": true
+      },
+      {
+        "nombre": "clienteId",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "direccionEntrega",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "estado",
+        "tipo": "EstadoReserva",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "creadaEn",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "entregaReal",
+        "tipo": "string | null",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "entregaFecha",
+        "tipo": "Fecha | null",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "recoleccionReal",
+        "tipo": "string | null",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "recoleccionFecha",
+        "tipo": "Fecha | null",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "canceladaEn",
+        "tipo": "string | null",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "motivoCancelacion",
+        "tipo": "string | null",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "solicitudCancelacion",
+        "tipo": "SolicitudCancelacion | null",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "rentaCobradaCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "depositoCobradoCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "depositoDevueltoCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "depositoDevueltoEn",
+        "tipo": "string | null",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "cargoIncidenciasCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "saldoIncidenciasCentavos",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "recoleccion",
+        "tipo": "ResultadoPiezas[]",
+        "opcional": false,
+        "readonly": false
+      }
+    ]
+  },
+  {
+    "nombre": "Bloqueo",
+    "extiende": [],
+    "atributos": [
+      {
+        "nombre": "id",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": true
+      },
+      {
+        "nombre": "articuloId",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "cantidad",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "periodo",
+        "tipo": "Periodo",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "tipo",
+        "tipo": "MotivoBloqueo",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "motivo",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "reservaId",
+        "tipo": "string | null",
+        "opcional": false,
+        "readonly": false
+      }
+    ]
+  },
+  {
+    "nombre": "AjusteExistencia",
+    "extiende": [],
+    "atributos": [
+      {
+        "nombre": "id",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": true
+      },
+      {
+        "nombre": "articuloId",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "anterior",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "nueva",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "motivo",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "registradoEn",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      }
+    ]
+  },
+  {
+    "nombre": "LineaSolicitud",
+    "extiende": [],
+    "atributos": [
+      {
+        "nombre": "articuloId",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "cantidad",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      }
+    ]
+  },
+  {
+    "nombre": "SolicitudReserva",
+    "extiende": [],
+    "atributos": [
+      {
+        "nombre": "clienteId",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "periodo",
+        "tipo": "Periodo",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "lineas",
+        "tipo": "LineaSolicitud[]",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "direccionEntrega",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      }
+    ]
+  },
+  {
+    "nombre": "Disponibilidad",
+    "extiende": [],
+    "atributos": [
+      {
+        "nombre": "articuloId",
+        "tipo": "string",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "totalPiezas",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "maximoOcupadas",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "disponibles",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      },
+      {
+        "nombre": "deficit",
+        "tipo": "number",
+        "opcional": false,
+        "readonly": false
+      }
+    ]
+  },
+  {
+    "nombre": "FiltroReservas",
+    "extiende": [],
+    "atributos": [
+      {
+        "nombre": "clienteId",
+        "tipo": "string",
+        "opcional": true,
+        "readonly": false
+      },
+      {
+        "nombre": "estado",
+        "tipo": "EstadoReserva",
+        "opcional": true,
+        "readonly": false
+      },
+      {
+        "nombre": "entregaDesde",
+        "tipo": "Fecha",
+        "opcional": true,
+        "readonly": false
+      },
+      {
+        "nombre": "entregaHasta",
+        "tipo": "Fecha",
+        "opcional": true,
+        "readonly": false
+      }
+    ]
+  }
+]

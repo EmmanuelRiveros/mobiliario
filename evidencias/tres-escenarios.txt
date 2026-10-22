@@ -1,0 +1,19 @@
+$ node dist/src/main.js
+
+AVANCE 1 · RENTA DE MOBILIARIO PARA EVENTOS SOCIALES
+Demostración en memoria · fecha simulada: 2027-06-01
+Fechas inclusivas: del 12 al 14 de junio de 2027 = 3 días.
+
+1. ACEPTADO · reservar 80 de las 100 sillas
+Reserva R-005 | renta: $3,600.00 | garantía: $720.00 | total inicial: $4,320.00
+Disponibles en esas fechas: 20
+
+2. RECHAZADO · reservar otras 30 sillas traslapadas
+DISPONIBILIDAD_INSUFICIENTE: El artículo A-003 tiene 20 piezas libres; se solicitaron 30.
+
+3. RECHAZADO · reducir existencias a 70 con 80 apartadas
+EXISTENCIAS_COMPROMETIDAS: No se pueden dejar menos de 80 piezas: hay reservas o bloqueos comprometidos.
+
+Resultado: 3 de 3 escenarios correctos. Los rechazos no modificaron los datos.
+
+Código de salida: 0

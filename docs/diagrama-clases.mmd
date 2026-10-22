@@ -1,0 +1,142 @@
+classDiagram
+direction TB
+class Periodo {
+  <<interface>>
+  +Fecha desde
+  +Fecha hasta
+}
+class Usuario {
+  <<interface>>
+  +string id
+  +string nombre
+  +string correo
+  +string telefono
+  +Rol rol
+}
+class Articulo {
+  <<interface>>
+  +string id
+  +string nombre
+  +string descripcion
+  +string categoria
+  +string[] fotografias
+  +number precioDiaCentavos
+  +number cargoDanoCentavos
+  +number valorReposicionCentavos
+  +number totalPiezas
+  +boolean activo
+}
+class DetalleReserva {
+  <<interface>>
+  +string articuloId
+  +string nombre
+  +number cantidad
+  +number precioDiaCentavos
+  +number cargoDanoCentavos
+  +number valorReposicionCentavos
+  +number subtotalCentavos
+}
+class Cotizacion {
+  <<interface>>
+  +Periodo periodo
+  +number dias
+  +DetalleReserva[] detalles
+  +number rentaCentavos
+  +number depositoCentavos
+  +number totalInicialCentavos
+}
+class ResultadoPiezas {
+  <<interface>>
+  +string articuloId
+  +number buenas
+  +number danadas
+  +number faltantes
+}
+class SolicitudCancelacion {
+  <<interface>>
+  +string solicitadaEn
+  +string motivo
+  +string politica
+}
+class Reserva {
+  <<interface>>
+  +string id
+  +string clienteId
+  +string direccionEntrega
+  +EstadoReserva estado
+  +string creadaEn
+  +string / null entregaReal
+  +Fecha / null entregaFecha
+  +string / null recoleccionReal
+  +Fecha / null recoleccionFecha
+  +string / null canceladaEn
+  +string / null motivoCancelacion
+  +SolicitudCancelacion / null solicitudCancelacion
+  +number rentaCobradaCentavos
+  +number depositoCobradoCentavos
+  +number depositoDevueltoCentavos
+  +string / null depositoDevueltoEn
+  +number cargoIncidenciasCentavos
+  +number saldoIncidenciasCentavos
+  +ResultadoPiezas[] recoleccion
+}
+Cotizacion <|-- Reserva
+class Bloqueo {
+  <<interface>>
+  +string id
+  +string articuloId
+  +number cantidad
+  +Periodo periodo
+  +MotivoBloqueo tipo
+  +string motivo
+  +string / null reservaId
+}
+class AjusteExistencia {
+  <<interface>>
+  +string id
+  +string articuloId
+  +number anterior
+  +number nueva
+  +string motivo
+  +string registradoEn
+}
+class LineaSolicitud {
+  <<interface>>
+  +string articuloId
+  +number cantidad
+}
+class SolicitudReserva {
+  <<interface>>
+  +string clienteId
+  +Periodo periodo
+  +LineaSolicitud[] lineas
+  +string direccionEntrega
+}
+class Disponibilidad {
+  <<interface>>
+  +string articuloId
+  +number totalPiezas
+  +number maximoOcupadas
+  +number disponibles
+  +number deficit
+}
+class FiltroReservas {
+  <<interface>>
+  +string clienteId?
+  +EstadoReserva estado?
+  +Fecha entregaDesde?
+  +Fecha entregaHasta?
+}
+Usuario "1" <-- "0..*" Reserva : clienteId
+Reserva "1" *-- "1..*" DetalleReserva : detalles
+Articulo "1" <-- "0..*" DetalleReserva : articuloId
+Reserva "1" *-- "0..1" SolicitudCancelacion : solicitud
+Reserva "1" *-- "0..*" ResultadoPiezas : recoleccion
+Articulo "1" <-- "0..*" ResultadoPiezas : articuloId
+Articulo "1" <-- "0..*" Bloqueo : articuloId
+Articulo "1" <-- "0..*" AjusteExistencia : articuloId
+Reserva "0..1" <-- "0..*" Bloqueo : reservaId
+Cotizacion "1" *-- "1" Periodo
+Bloqueo "1" *-- "1" Periodo
+SolicitudReserva "1" *-- "1" Periodo
+SolicitudReserva "1" *-- "1..*" LineaSolicitud

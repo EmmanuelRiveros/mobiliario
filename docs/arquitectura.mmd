@@ -1,0 +1,12 @@
+flowchart TB
+  Portal[Portal del cliente futuro] -.-> Central[Servicio central futuro]
+  Panel[Panel administrativo futuro] -.-> Central
+  Central -.-> Dominio[RentaService y entidades implementados]
+  Consola[Consola implementada] --> Dominio
+  Dominio --> Puerto[RepositorioRenta transaccional]
+  Memoria[Adaptador en memoria implementado] -. implements .-> Puerto
+  MySQL[Adaptador MySQL futuro] -. implements .-> Puerto
+  classDef futuro fill:#f8fafc,stroke-dasharray:6 4;
+  classDef actual fill:#eff6ff,stroke:#334155;
+  class Portal,Panel,Central,MySQL futuro;
+  class Consola,Dominio,Puerto,Memoria actual;

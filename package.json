@@ -1,0 +1,23 @@
+{
+  "name": "mobiliario-dominio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Avance 1 del dominio de renta de mobiliario para eventos sociales",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "demo": "npm run build && node dist/src/main.js",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "verificar:arquitectura": "node scripts/verificar-arquitectura.mjs",
+    "verificar:diagrama": "node scripts/modelo-diagrama.mjs",
+    "evidencias": "node scripts/registrar-evidencias.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "~6.0.3"
+  }
+}

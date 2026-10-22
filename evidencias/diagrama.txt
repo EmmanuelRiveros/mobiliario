@@ -1,0 +1,5 @@
+$ node scripts/modelo-diagrama.mjs
+
+Diagrama consistente con 14 interfaces y 84 atributos del modelo.
+
+Código de salida: 0

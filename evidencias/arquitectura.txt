@@ -1,0 +1,5 @@
+$ node scripts/verificar-arquitectura.mjs
+
+Arquitectura correcta: 5 archivos de dominio sin dependencias externas. El almacenamiento se elige únicamente en src/composicion.ts.
+
+Código de salida: 0

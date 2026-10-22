@@ -1,0 +1,26 @@
+{
+  "node": "v24.11.1",
+  "ejecutadoEn": "2026-10-22T21:20:27.431Z",
+  "resultados": [
+    {
+      "comprobacion": "compilacion",
+      "codigo": 0
+    },
+    {
+      "comprobacion": "tres-escenarios",
+      "codigo": 0
+    },
+    {
+      "comprobacion": "pruebas",
+      "codigo": 0
+    },
+    {
+      "comprobacion": "arquitectura",
+      "codigo": 0
+    },
+    {
+      "comprobacion": "diagrama",
+      "codigo": 0
+    }
+  ]
+}

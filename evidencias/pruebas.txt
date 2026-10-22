@@ -1,0 +1,45 @@
+$ node --test --test-reporter=spec dist/test/renta.test.js
+
+✔ cotiza días inclusivos, renta y garantía del 20 por ciento (4.1045ms)
+✔ acepta la capacidad exacta y rechaza una pieza adicional (1.5143ms)
+✔ rechaza reservas traslapadas incluso por el último día (0.8317ms)
+✔ permite reutilizar todas las piezas el día siguiente al final (1.3643ms)
+✔ consulta amplia usa el máximo simultáneo y no suma reservas separadas (0.9161ms)
+✔ el mantenimiento descuenta únicamente en su rango y respeta reservas (1.165ms)
+✔ ajuste rechaza menos piezas que el máximo futuro y registra el motivo (0.8339ms)
+✔ un bloqueo también compromete existencias y los periodos separados no se suman (0.9578ms)
+✔ dos confirmaciones concurrentes no sobreasignan las mismas piezas (0.7652ms)
+✔ cotizar no aparta y confirmar recalcula disponibilidad (0.8696ms)
+✔ una reserva de varios artículos se rechaza completa si falla uno (0.6108ms)
+✔ las cantidades deben ser enteras positivas y cada artículo aparece una vez (1.6118ms)
+✔ valida fechas reales, orden y años bisiestos (0.2785ms)
+✔ rechaza nuevas reservas y mantenimiento en el pasado (0.3119ms)
+✔ correo se normaliza y no se puede repetir (0.3516ms)
+✔ las reservas solo pueden asociarse a un usuario cliente existente (0.4317ms)
+✔ rechaza precios y existencias inválidos y desbordamientos monetarios (0.443ms)
+✔ conserva precios históricos aunque cambie el catálogo (0.7151ms)
+✔ filtra catálogo y no permite nuevas reservas de artículos inactivos (0.6017ms)
+✔ la solicitud de cancelación no libera stock; la cancelación administrativa sí (1.0184ms)
+✔ no permite solicitar cancelar una reserva ajena ni cancelar una ya entregada (0.9561ms)
+✔ la entrega requiere fecha, depósito y renta correctos; no se repite (0.7627ms)
+✔ recolección valida sumas y no guarda un resultado parcial incorrecto (1.0017ms)
+✔ recolección temprana libera buenas al día siguiente y bloquea dañadas y faltantes (0.8883ms)
+✔ devuelve solo el depósito liberable y no permite devolverlo dos veces (0.8409ms)
+✔ saldo del depósito se limita a cero y el exceso queda como cargo pendiente (0.5174ms)
+✔ una recolección atrasada mantiene piezas ocupadas y bloquea nuevas reservas (1.1964ms)
+✔ daños reales se registran y señalan reservas futuras afectadas (1.5303ms)
+✔ cerrar un bloqueo libera piezas al día siguiente y rechaza cierre retroactivo (0.501ms)
+✔ calendario e historial se filtran y el ingreso excluye la garantía (1.2016ms)
+✔ el repositorio entrega copias y revierte una transacción que falla (0.4731ms)
+✔ el repositorio alternativo se inyecta sin modificar el servicio (0.3027ms)
+✔ el barrido de disponibilidad coincide con un conteo diario independiente (9.6987ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 144.3431
+
+Código de salida: 0

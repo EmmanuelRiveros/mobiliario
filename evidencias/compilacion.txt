@@ -1,0 +1,4 @@
+$ node node_modules/typescript/bin/tsc -p tsconfig.json
+
+
+Código de salida: 0

@@ -1,0 +1,8 @@
+Verificación desde una copia nueva sin node_modules ni dist.
+Node.js v24.11.1
+npm ci: código 0; 0 vulnerabilidades reportadas.
+npm run demo: código 0; tres escenarios correctos.
+npm test: código 0; 33 pruebas correctas.
+npm run verificar:arquitectura: código 0.
+npm run verificar:diagrama: código 0; 14 interfaces y 84 atributos.
+La copia conserva únicamente los archivos del proyecto y se instaló desde package-lock.json.
