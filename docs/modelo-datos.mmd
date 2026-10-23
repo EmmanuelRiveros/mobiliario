@@ -1,0 +1,112 @@
+erDiagram
+  ajustes {
+    varchar id PK
+    varchar articuloId FK
+    bigint anterior
+    bigint nueva
+    varchar motivo
+    varchar registradoEn
+  }
+  articulos {
+    varchar id PK
+    varchar nombre
+    varchar descripcion
+    varchar categoria
+    bigint precioDiaCentavos
+    bigint cargoDanoCentavos
+    bigint valorReposicionCentavos
+    bigint totalPiezas
+    tinyint activo
+  }
+  bloqueos {
+    varchar id PK
+    varchar articuloId FK
+    bigint cantidad
+    varchar desde
+    varchar hasta
+    enum tipo
+    varchar motivo
+    varchar reservaId FK
+  }
+  cerrojo_dominio {
+    int id PK
+  }
+  credenciales {
+    varchar usuarioId PK, FK
+    varchar passwordHash
+    varchar creadaEn
+  }
+  detalles_reserva {
+    varchar reservaId PK, FK
+    int posicion PK
+    varchar articuloId FK
+    varchar nombre
+    bigint cantidad
+    bigint precioDiaCentavos
+    bigint cargoDanoCentavos
+    bigint valorReposicionCentavos
+    bigint subtotalCentavos
+  }
+  fotografias {
+    varchar articuloId PK, FK
+    int posicion PK
+    varchar referencia
+  }
+  recolecciones {
+    varchar reservaId PK, FK
+    int posicion PK
+    varchar articuloId FK
+    bigint buenas
+    bigint danadas
+    bigint faltantes
+  }
+  reservas {
+    varchar id PK
+    varchar clienteId FK
+    varchar desde
+    varchar hasta
+    int dias
+    bigint rentaCentavos
+    bigint depositoCentavos
+    bigint totalInicialCentavos
+    varchar direccionEntrega
+    enum estado
+    varchar creadaEn
+    varchar entregaReal
+    varchar entregaFecha
+    varchar recoleccionReal
+    varchar recoleccionFecha
+    varchar canceladaEn
+    varchar motivoCancelacion
+    varchar solicitadaEn
+    varchar motivoSolicitud
+    varchar politicaSolicitud
+    bigint rentaCobradaCentavos
+    bigint depositoCobradoCentavos
+    bigint depositoDevueltoCentavos
+    varchar depositoDevueltoEn
+    bigint cargoIncidenciasCentavos
+    bigint saldoIncidenciasCentavos
+  }
+  schema_migrations {
+    varchar nombre PK
+    char sha256
+    timestamp aplicadaEn
+  }
+  usuarios {
+    varchar id PK
+    varchar nombre
+    varchar correo UK
+    varchar telefono
+    enum rol
+  }
+  articulos ||--o{ ajustes : "articuloId"
+  articulos ||--o{ bloqueos : "articuloId"
+  reservas |o--o{ bloqueos : "reservaId"
+  usuarios ||--o| credenciales : "usuarioId"
+  articulos ||--o{ detalles_reserva : "articuloId"
+  reservas ||--o{ detalles_reserva : "reservaId"
+  articulos ||--o{ fotografias : "articuloId"
+  articulos ||--o{ recolecciones : "articuloId"
+  reservas ||--o{ recolecciones : "reservaId"
+  usuarios ||--o{ reservas : "clienteId"

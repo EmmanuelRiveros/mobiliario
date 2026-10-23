@@ -1,0 +1,6 @@
+{
+  "documentacionAbre": true,
+  "operacion": "GET /articulos",
+  "ejecutadaDesdeSwagger": true,
+  "estado": 200
+}

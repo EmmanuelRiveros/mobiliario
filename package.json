@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Avance 1 del dominio de renta de mobiliario para eventos sociales",
+  "description": "Servicio central de renta de mobiliario con MySQL y control de acceso",
   "engines": {
     "node": ">=22.18.0"
   },
@@ -14,10 +14,28 @@
     "test": "npm run build && node --test dist/test/*.test.js",
     "verificar:arquitectura": "node scripts/verificar-arquitectura.mjs",
     "verificar:diagrama": "node scripts/modelo-diagrama.mjs",
-    "evidencias": "node scripts/registrar-evidencias.mjs"
+    "evidencias": "node scripts/registrar-evidencias.mjs",
+    "start": "node --env-file=.env dist/src/servicio/main.js",
+    "db:migrar": "npm run build && node --env-file=.env dist/src/servicio/migrar.js",
+    "db:sembrar": "npm run build && node --env-file=.env dist/src/servicio/sembrar.js",
+    "test:integracion": "npm run build && node --env-file=.env --test dist/test/servicio.integration.js",
+    "db:crear": "npm run build && node --env-file=.env dist/src/servicio/crear-base.js",
+    "demo:servicio": "node --env-file=.env scripts/demo-servicio.mjs",
+    "verificar:dominio": "node scripts/verificar-dominio-conservado.mjs",
+    "esquemas": "node scripts/generar-esquemas.mjs",
+    "verificar:esquemas": "node scripts/generar-esquemas.mjs --check",
+    "documentar:base": "node --env-file=.env scripts/documentar-base.mjs"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
     "typescript": "~6.0.3"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.3.1",
+    "@fastify/jwt": "^10.2.5",
+    "@fastify/swagger": "^9.9.2",
+    "@fastify/swagger-ui": "^6.1.2",
+    "fastify": "^5.12.7",
+    "mysql2": "^3.24.6"
   }
 }

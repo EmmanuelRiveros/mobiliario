@@ -1,0 +1,12 @@
+{
+  "procesoReiniciado": true,
+  "estadoAntes": 200,
+  "estadoDespues": 200,
+  "datosPersistidos": {
+    "articuloId": "A-e76af252-5785-4cee-bac2-94dff97ad5fd",
+    "totalPiezas": 100,
+    "maximoOcupadas": 80,
+    "disponibles": 20,
+    "deficit": 0
+  }
+}

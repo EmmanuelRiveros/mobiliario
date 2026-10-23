@@ -1,0 +1,182 @@
+{
+  "base": "http://127.0.0.1:3000",
+  "casos": [
+    {
+      "caso": "1 Sin credencial",
+      "metodo": "POST",
+      "ruta": "/articulos",
+      "estado": 401,
+      "duracionMs": 2.64,
+      "respuesta": {
+        "ok": false,
+        "datos": null,
+        "error": {
+          "codigo": "CREDENCIAL_INVALIDA",
+          "mensaje": "Falta una credencial válida o ha expirado."
+        },
+        "solicitudId": "req-4"
+      }
+    },
+    {
+      "caso": "2 Credencial de rol cliente",
+      "metodo": "POST",
+      "ruta": "/articulos",
+      "estado": 403,
+      "duracionMs": 4.38,
+      "respuesta": {
+        "ok": false,
+        "datos": null,
+        "error": {
+          "codigo": "SIN_PERMISO",
+          "mensaje": "Tu rol no tiene permiso para esta operación."
+        },
+        "solicitudId": "req-5"
+      }
+    },
+    {
+      "caso": "3 Credencial de administrador",
+      "metodo": "POST",
+      "ruta": "/articulos",
+      "estado": 201,
+      "duracionMs": 12.01,
+      "respuesta": {
+        "ok": true,
+        "datos": {
+          "id": "A-e76af252-5785-4cee-bac2-94dff97ad5fd",
+          "nombre": "Silla demostración 1792718125310",
+          "descripcion": "Artículo ficticio del recorrido del avance 2",
+          "categoria": "Demostración",
+          "fotografias": [
+            "docs/imagenes/silla.svg"
+          ],
+          "precioDiaCentavos": 1500,
+          "cargoDanoCentavos": 15000,
+          "valorReposicionCentavos": 45000,
+          "totalPiezas": 100,
+          "activo": true
+        },
+        "error": null,
+        "solicitudId": "req-6"
+      }
+    },
+    {
+      "caso": "4 Reserva aceptada de 80 piezas por tres días",
+      "metodo": "POST",
+      "ruta": "/reservas",
+      "estado": 201,
+      "duracionMs": 51,
+      "respuesta": {
+        "ok": true,
+        "datos": {
+          "periodo": {
+            "desde": "2026-10-30",
+            "hasta": "2026-11-01"
+          },
+          "dias": 3,
+          "detalles": [
+            {
+              "articuloId": "A-e76af252-5785-4cee-bac2-94dff97ad5fd",
+              "nombre": "Silla demostración 1792718125310",
+              "cantidad": 80,
+              "precioDiaCentavos": 1500,
+              "cargoDanoCentavos": 15000,
+              "valorReposicionCentavos": 45000,
+              "subtotalCentavos": 360000
+            }
+          ],
+          "rentaCentavos": 360000,
+          "depositoCentavos": 72000,
+          "totalInicialCentavos": 432000,
+          "id": "R-6e8bd357-4a40-4167-8b9b-75cd81842b40",
+          "clienteId": "U-6e9cbdb2-9295-4e55-99fe-2928dd8b32d9",
+          "direccionEntrega": "Domicilio ficticio del evento",
+          "estado": "apartada",
+          "creadaEn": "2026-10-23T01:15:25.357Z",
+          "entregaReal": null,
+          "entregaFecha": null,
+          "recoleccionReal": null,
+          "recoleccionFecha": null,
+          "canceladaEn": null,
+          "motivoCancelacion": null,
+          "solicitudCancelacion": null,
+          "rentaCobradaCentavos": 0,
+          "depositoCobradoCentavos": 0,
+          "depositoDevueltoCentavos": 0,
+          "depositoDevueltoEn": null,
+          "cargoIncidenciasCentavos": 0,
+          "saldoIncidenciasCentavos": 0,
+          "recoleccion": []
+        },
+        "error": null,
+        "solicitudId": "req-7"
+      }
+    },
+    {
+      "caso": "5 Sobreventa rechazada por el dominio",
+      "metodo": "POST",
+      "ruta": "/reservas",
+      "estado": 409,
+      "duracionMs": 8.58,
+      "respuesta": {
+        "ok": false,
+        "datos": null,
+        "error": {
+          "codigo": "DISPONIBILIDAD_INSUFICIENTE",
+          "mensaje": "El artículo A-e76af252-5785-4cee-bac2-94dff97ad5fd tiene 20 piezas libres; se solicitaron 30."
+        },
+        "solicitudId": "req-8"
+      }
+    },
+    {
+      "caso": "6 Reducción que afecta compromisos",
+      "metodo": "POST",
+      "ruta": "/articulos/A-e76af252-5785-4cee-bac2-94dff97ad5fd/ajustes",
+      "estado": 409,
+      "duracionMs": 8.31,
+      "respuesta": {
+        "ok": false,
+        "datos": null,
+        "error": {
+          "codigo": "EXISTENCIAS_COMPROMETIDAS",
+          "mensaje": "No se pueden dejar menos de 80 piezas: hay reservas o bloqueos comprometidos."
+        },
+        "solicitudId": "req-9"
+      }
+    },
+    {
+      "caso": "7 Token alterado rechazado",
+      "metodo": "POST",
+      "ruta": "/articulos",
+      "estado": 401,
+      "duracionMs": 2.38,
+      "respuesta": {
+        "ok": false,
+        "datos": null,
+        "error": {
+          "codigo": "CREDENCIAL_INVALIDA",
+          "mensaje": "Falta una credencial válida o ha expirado."
+        },
+        "solicitudId": "req-a"
+      }
+    },
+    {
+      "caso": "8 Disponibilidad persistida",
+      "metodo": "GET",
+      "ruta": "/articulos/A-e76af252-5785-4cee-bac2-94dff97ad5fd/disponibilidad?desde=2026-10-30&hasta=2026-11-01",
+      "estado": 200,
+      "duracionMs": 6.85,
+      "respuesta": {
+        "ok": true,
+        "datos": {
+          "articuloId": "A-e76af252-5785-4cee-bac2-94dff97ad5fd",
+          "totalPiezas": 100,
+          "maximoOcupadas": 80,
+          "disponibles": 20,
+          "deficit": 0
+        },
+        "error": null,
+        "solicitudId": "req-b"
+      }
+    }
+  ]
+}

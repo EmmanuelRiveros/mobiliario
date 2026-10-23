@@ -1,0 +1,151 @@
+
+> mobiliario-dominio@1.0.0 demo:servicio
+> node --env-file=.env scripts/demo-servicio.mjs
+
+
+1 Sin credencial
+POST /articulos -> 401
+{
+  "ok": false,
+  "datos": null,
+  "error": {
+    "codigo": "CREDENCIAL_INVALIDA",
+    "mensaje": "Falta una credencial válida o ha expirado."
+  },
+  "solicitudId": "req-4"
+}
+
+2 Credencial de rol cliente
+POST /articulos -> 403
+{
+  "ok": false,
+  "datos": null,
+  "error": {
+    "codigo": "SIN_PERMISO",
+    "mensaje": "Tu rol no tiene permiso para esta operación."
+  },
+  "solicitudId": "req-5"
+}
+
+3 Credencial de administrador
+POST /articulos -> 201
+{
+  "ok": true,
+  "datos": {
+    "id": "A-e76af252-5785-4cee-bac2-94dff97ad5fd",
+    "nombre": "Silla demostración 1792718125310",
+    "descripcion": "Artículo ficticio del recorrido del avance 2",
+    "categoria": "Demostración",
+    "fotografias": [
+      "docs/imagenes/silla.svg"
+    ],
+    "precioDiaCentavos": 1500,
+    "cargoDanoCentavos": 15000,
+    "valorReposicionCentavos": 45000,
+    "totalPiezas": 100,
+    "activo": true
+  },
+  "error": null,
+  "solicitudId": "req-6"
+}
+
+4 Reserva aceptada de 80 piezas por tres días
+POST /reservas -> 201
+{
+  "ok": true,
+  "datos": {
+    "periodo": {
+      "desde": "2026-10-30",
+      "hasta": "2026-11-01"
+    },
+    "dias": 3,
+    "detalles": [
+      {
+        "articuloId": "A-e76af252-5785-4cee-bac2-94dff97ad5fd",
+        "nombre": "Silla demostración 1792718125310",
+        "cantidad": 80,
+        "precioDiaCentavos": 1500,
+        "cargoDanoCentavos": 15000,
+        "valorReposicionCentavos": 45000,
+        "subtotalCentavos": 360000
+      }
+    ],
+    "rentaCentavos": 360000,
+    "depositoCentavos": 72000,
+    "totalInicialCentavos": 432000,
+    "id": "R-6e8bd357-4a40-4167-8b9b-75cd81842b40",
+    "clienteId": "U-6e9cbdb2-9295-4e55-99fe-2928dd8b32d9",
+    "direccionEntrega": "Domicilio ficticio del evento",
+    "estado": "apartada",
+    "creadaEn": "2026-10-23T01:15:25.357Z",
+    "entregaReal": null,
+    "entregaFecha": null,
+    "recoleccionReal": null,
+    "recoleccionFecha": null,
+    "canceladaEn": null,
+    "motivoCancelacion": null,
+    "solicitudCancelacion": null,
+    "rentaCobradaCentavos": 0,
+    "depositoCobradoCentavos": 0,
+    "depositoDevueltoCentavos": 0,
+    "depositoDevueltoEn": null,
+    "cargoIncidenciasCentavos": 0,
+    "saldoIncidenciasCentavos": 0,
+    "recoleccion": []
+  },
+  "error": null,
+  "solicitudId": "req-7"
+}
+
+5 Sobreventa rechazada por el dominio
+POST /reservas -> 409
+{
+  "ok": false,
+  "datos": null,
+  "error": {
+    "codigo": "DISPONIBILIDAD_INSUFICIENTE",
+    "mensaje": "El artículo A-e76af252-5785-4cee-bac2-94dff97ad5fd tiene 20 piezas libres; se solicitaron 30."
+  },
+  "solicitudId": "req-8"
+}
+
+6 Reducción que afecta compromisos
+POST /articulos/A-e76af252-5785-4cee-bac2-94dff97ad5fd/ajustes -> 409
+{
+  "ok": false,
+  "datos": null,
+  "error": {
+    "codigo": "EXISTENCIAS_COMPROMETIDAS",
+    "mensaje": "No se pueden dejar menos de 80 piezas: hay reservas o bloqueos comprometidos."
+  },
+  "solicitudId": "req-9"
+}
+
+7 Token alterado rechazado
+POST /articulos -> 401
+{
+  "ok": false,
+  "datos": null,
+  "error": {
+    "codigo": "CREDENCIAL_INVALIDA",
+    "mensaje": "Falta una credencial válida o ha expirado."
+  },
+  "solicitudId": "req-a"
+}
+
+8 Disponibilidad persistida
+GET /articulos/A-e76af252-5785-4cee-bac2-94dff97ad5fd/disponibilidad?desde=2026-10-30&hasta=2026-11-01 -> 200
+{
+  "ok": true,
+  "datos": {
+    "articuloId": "A-e76af252-5785-4cee-bac2-94dff97ad5fd",
+    "totalPiezas": 100,
+    "maximoOcupadas": 80,
+    "disponibles": 20,
+    "deficit": 0
+  },
+  "error": null,
+  "solicitudId": "req-b"
+}
+
+Ocho casos correctos. Las credenciales de sesión no se guardaron en la evidencia.

@@ -1,0 +1,383 @@
+{
+  "motor": "MySQL real",
+  "migraciones": [
+    {
+      "nombre": "001_dominio.sql",
+      "sha256": "0bb8a9d207c35e64f60dd22c8708cc18535ab347c0c8ff65019e3dcdc0fa110f"
+    },
+    {
+      "nombre": "002_credenciales.sql",
+      "sha256": "da4eea0cd1ab03a3256931ddffd175df0a362e7e0beaea7bef1e353c485c4ef4"
+    }
+  ],
+  "dominioSinReescribir": true,
+  "rutasDocumentadas": 27,
+  "pruebas": [
+    {
+      "caso": "Inicio de sesiÃ³n administrador",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Inicio de sesiÃ³n cliente",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "ContraseÃ±a incorrecta",
+      "estado": 401,
+      "codigo": "CREDENCIALES_INVALIDAS"
+    },
+    {
+      "caso": "Correo desconocido",
+      "estado": 401,
+      "codigo": "CREDENCIALES_INVALIDAS"
+    },
+    {
+      "caso": "Registro pÃºblico cliente",
+      "estado": 201,
+      "codigo": null
+    },
+    {
+      "caso": "Rol inyectado en registro",
+      "estado": 400,
+      "codigo": "PETICION_INVALIDA"
+    },
+    {
+      "caso": "Correo duplicado conflicto",
+      "estado": 409,
+      "codigo": "CORREO_DUPLICADO"
+    },
+    {
+      "caso": "Datos externos con tipo incorrecto",
+      "estado": 400,
+      "codigo": "PETICION_INVALIDA"
+    },
+    {
+      "caso": "Propiedad extra rechazada",
+      "estado": 400,
+      "codigo": "PETICION_INVALIDA"
+    },
+    {
+      "caso": "Perfil propio",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Sin credencial",
+      "estado": 401,
+      "codigo": "CREDENCIAL_INVALIDA"
+    },
+    {
+      "caso": "Rol equivocado",
+      "estado": 403,
+      "codigo": "SIN_PERMISO"
+    },
+    {
+      "caso": "Credencial correcta",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Token alterado a mano",
+      "estado": 401,
+      "codigo": "CREDENCIAL_INVALIDA"
+    },
+    {
+      "caso": "Token expirado",
+      "estado": 401,
+      "codigo": "CREDENCIAL_INVALIDA"
+    },
+    {
+      "caso": "Token sin firma",
+      "estado": 401,
+      "codigo": "CREDENCIAL_INVALIDA"
+    },
+    {
+      "caso": "Lista usuarios administrativa",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Usuarios protegidos",
+      "estado": 403,
+      "codigo": "SIN_PERMISO"
+    },
+    {
+      "caso": "Query desconocida rechazada",
+      "estado": 400,
+      "codigo": "PETICION_INVALIDA"
+    },
+    {
+      "caso": "Salud MySQL",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Crear artÃ­culo",
+      "estado": 201,
+      "codigo": null
+    },
+    {
+      "caso": "Cantidad como texto no aceptada",
+      "estado": 400,
+      "codigo": "PETICION_INVALIDA"
+    },
+    {
+      "caso": "Negativo en entrada",
+      "estado": 400,
+      "codigo": "PETICION_INVALIDA"
+    },
+    {
+      "caso": "Editar catÃ¡logo",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "ArtÃ­culo detalle",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "ArtÃ­culo ausente",
+      "estado": 404,
+      "codigo": "NO_ENCONTRADO"
+    },
+    {
+      "caso": "Filtros catÃ¡logo",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Query de precio invÃ¡lida",
+      "estado": 400,
+      "codigo": "PETICION_INVALIDA"
+    },
+    {
+      "caso": "Filtro invertido es conflicto de dominio",
+      "estado": 409,
+      "codigo": "DATOS_INVALIDOS"
+    },
+    {
+      "caso": "Disponibilidad inicial",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Fecha civil imposible",
+      "estado": 400,
+      "codigo": "PETICION_INVALIDA"
+    },
+    {
+      "caso": "Fecha ausente",
+      "estado": 400,
+      "codigo": "PETICION_INVALIDA"
+    },
+    {
+      "caso": "Cotizar sin apartar",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Cotizar artÃ­culo ausente",
+      "estado": 404,
+      "codigo": "NO_ENCONTRADO"
+    },
+    {
+      "caso": "SuplantaciÃ³n de cliente en reserva",
+      "estado": 403,
+      "codigo": "SIN_PERMISO"
+    },
+    {
+      "caso": "Confirmar 80 piezas",
+      "estado": 201,
+      "codigo": null
+    },
+    {
+      "caso": "Disponibilidad tras confirmar",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Sobreventa rechazada",
+      "estado": 409,
+      "codigo": "DISPONIBILIDAD_INSUFICIENTE"
+    },
+    {
+      "caso": "Existencias comprometidas",
+      "estado": 409,
+      "codigo": "EXISTENCIAS_COMPROMETIDAS"
+    },
+    {
+      "caso": "Ajuste vÃ¡lido",
+      "estado": 201,
+      "codigo": null
+    },
+    {
+      "caso": "BitÃ¡cora ajustes",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Detalle propio",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "SesiÃ³n de otro cliente",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Reserva ajena protegida",
+      "estado": 403,
+      "codigo": "SIN_PERMISO"
+    },
+    {
+      "caso": "Cliente historial ajeno prohibido",
+      "estado": 403,
+      "codigo": "SIN_PERMISO"
+    },
+    {
+      "caso": "Historial propio",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Listado administrativo",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Entrega con depÃ³sito incorrecto",
+      "estado": 409,
+      "codigo": "DEPOSITO_INCORRECTO"
+    },
+    {
+      "caso": "Entrega con renta incorrecta",
+      "estado": 409,
+      "codigo": "COBRO_RENTA_INCORRECTO"
+    },
+    {
+      "caso": "Entrega correcta",
+      "estado": 201,
+      "codigo": null
+    },
+    {
+      "caso": "Cancelar entregada se rechaza",
+      "estado": 409,
+      "codigo": "ESTADO_RESERVA_INVALIDO"
+    },
+    {
+      "caso": "RecolecciÃ³n inconsistente",
+      "estado": 409,
+      "codigo": "RECOLECCION_INCONSISTENTE"
+    },
+    {
+      "caso": "RecolecciÃ³n con daÃ±o",
+      "estado": 201,
+      "codigo": null
+    },
+    {
+      "caso": "DevoluciÃ³n de garantÃ­a incorrecta",
+      "estado": 409,
+      "codigo": "DEVOLUCION_DEPOSITO_INVALIDA"
+    },
+    {
+      "caso": "DevoluciÃ³n correcta descontando daÃ±o",
+      "estado": 201,
+      "codigo": null
+    },
+    {
+      "caso": "DevoluciÃ³n duplicada",
+      "estado": 409,
+      "codigo": "DEVOLUCION_DEPOSITO_INVALIDA"
+    },
+    {
+      "caso": "Bloqueo automÃ¡tico por daÃ±o",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Terminar bloqueo por daÃ±o",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Crear mantenimiento",
+      "estado": 201,
+      "codigo": null
+    },
+    {
+      "caso": "Cerrar mantenimiento",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Reserva para cancelaciÃ³n",
+      "estado": 201,
+      "codigo": null
+    },
+    {
+      "caso": "Solicitud cancelaciÃ³n propia",
+      "estado": 201,
+      "codigo": null
+    },
+    {
+      "caso": "Solicitud duplicada",
+      "estado": 409,
+      "codigo": "SOLICITUD_DUPLICADA"
+    },
+    {
+      "caso": "Aprobar cancelaciÃ³n",
+      "estado": 201,
+      "codigo": null
+    },
+    {
+      "caso": "Calendario",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Resumen negocio",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "ArtÃ­culo para concurrencia",
+      "estado": 201,
+      "codigo": null
+    },
+    {
+      "caso": "Concurrencia entre dos conexiones: una confirma y otra se rechaza",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Rollback real y resultados independientes del almacenamiento",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "ContraseÃ±as derivadas con sal aleatoria y comparaciÃ³n segura",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "CORS permite solo los dos orÃ­genes configurados",
+      "estado": 200,
+      "codigo": null
+    },
+    {
+      "caso": "Recurso inexistente uniforme",
+      "estado": 404,
+      "codigo": "NO_ENCONTRADO"
+    },
+    {
+      "caso": "Reconectar conserva reserva y detalle",
+      "estado": 200,
+      "codigo": null
+    }
+  ],
+  "nota": "Cada llamada comprueba estado HTTP y sobre uniforme. No se registran tokens ni contraseÃ±as."
+}

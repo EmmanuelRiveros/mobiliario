@@ -1,0 +1,29 @@
+{
+  "motor": "8.0.42",
+  "tablas": [
+    "ajustes",
+    "articulos",
+    "bloqueos",
+    "cerrojo_dominio",
+    "credenciales",
+    "detalles_reserva",
+    "fotografias",
+    "recolecciones",
+    "reservas",
+    "schema_migrations",
+    "usuarios"
+  ],
+  "migraciones": [
+    {
+      "nombre": "001_dominio.sql",
+      "sha256": "0bb8a9d207c35e64f60dd22c8708cc18535ab347c0c8ff65019e3dcdc0fa110f",
+      "aplicadaEn": "2026-10-23T01:08:23.000Z"
+    },
+    {
+      "nombre": "002_credenciales.sql",
+      "sha256": "da4eea0cd1ab03a3256931ddffd175df0a362e7e0beaea7bef1e353c485c4ef4",
+      "aplicadaEn": "2026-10-23T01:08:23.000Z"
+    }
+  ],
+  "nota": "Sólo metadatos; no se exportan cuentas, hashes ni secretos."
+}

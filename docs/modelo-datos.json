@@ -1,0 +1,641 @@
+{
+  "tablas": {
+    "ajustes": [
+      {
+        "tabla": "ajustes",
+        "nombre": "id",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "PRI"
+      },
+      {
+        "tabla": "ajustes",
+        "nombre": "articuloId",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "MUL"
+      },
+      {
+        "tabla": "ajustes",
+        "nombre": "anterior",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "ajustes",
+        "nombre": "nueva",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "ajustes",
+        "nombre": "motivo",
+        "tipo": "varchar(500)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "ajustes",
+        "nombre": "registradoEn",
+        "tipo": "varchar(35)",
+        "permiteNulo": "NO",
+        "clave": ""
+      }
+    ],
+    "articulos": [
+      {
+        "tabla": "articulos",
+        "nombre": "id",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "PRI"
+      },
+      {
+        "tabla": "articulos",
+        "nombre": "nombre",
+        "tipo": "varchar(120)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "articulos",
+        "nombre": "descripcion",
+        "tipo": "varchar(1000)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "articulos",
+        "nombre": "categoria",
+        "tipo": "varchar(80)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "articulos",
+        "nombre": "precioDiaCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "articulos",
+        "nombre": "cargoDanoCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "articulos",
+        "nombre": "valorReposicionCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "articulos",
+        "nombre": "totalPiezas",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "articulos",
+        "nombre": "activo",
+        "tipo": "tinyint(1)",
+        "permiteNulo": "NO",
+        "clave": ""
+      }
+    ],
+    "bloqueos": [
+      {
+        "tabla": "bloqueos",
+        "nombre": "id",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "PRI"
+      },
+      {
+        "tabla": "bloqueos",
+        "nombre": "articuloId",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "MUL"
+      },
+      {
+        "tabla": "bloqueos",
+        "nombre": "cantidad",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "bloqueos",
+        "nombre": "desde",
+        "tipo": "varchar(10)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "bloqueos",
+        "nombre": "hasta",
+        "tipo": "varchar(10)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "bloqueos",
+        "nombre": "tipo",
+        "tipo": "enum('mantenimiento','dano','faltante')",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "bloqueos",
+        "nombre": "motivo",
+        "tipo": "varchar(500)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "bloqueos",
+        "nombre": "reservaId",
+        "tipo": "varchar(100)",
+        "permiteNulo": "YES",
+        "clave": "MUL"
+      }
+    ],
+    "cerrojo_dominio": [
+      {
+        "tabla": "cerrojo_dominio",
+        "nombre": "id",
+        "tipo": "int",
+        "permiteNulo": "NO",
+        "clave": "PRI"
+      }
+    ],
+    "credenciales": [
+      {
+        "tabla": "credenciales",
+        "nombre": "usuarioId",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "PRI"
+      },
+      {
+        "tabla": "credenciales",
+        "nombre": "passwordHash",
+        "tipo": "varchar(255)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "credenciales",
+        "nombre": "creadaEn",
+        "tipo": "varchar(35)",
+        "permiteNulo": "NO",
+        "clave": ""
+      }
+    ],
+    "detalles_reserva": [
+      {
+        "tabla": "detalles_reserva",
+        "nombre": "reservaId",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "PRI"
+      },
+      {
+        "tabla": "detalles_reserva",
+        "nombre": "posicion",
+        "tipo": "int",
+        "permiteNulo": "NO",
+        "clave": "PRI"
+      },
+      {
+        "tabla": "detalles_reserva",
+        "nombre": "articuloId",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "MUL"
+      },
+      {
+        "tabla": "detalles_reserva",
+        "nombre": "nombre",
+        "tipo": "varchar(120)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "detalles_reserva",
+        "nombre": "cantidad",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "detalles_reserva",
+        "nombre": "precioDiaCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "detalles_reserva",
+        "nombre": "cargoDanoCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "detalles_reserva",
+        "nombre": "valorReposicionCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "detalles_reserva",
+        "nombre": "subtotalCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      }
+    ],
+    "fotografias": [
+      {
+        "tabla": "fotografias",
+        "nombre": "articuloId",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "PRI"
+      },
+      {
+        "tabla": "fotografias",
+        "nombre": "posicion",
+        "tipo": "int",
+        "permiteNulo": "NO",
+        "clave": "PRI"
+      },
+      {
+        "tabla": "fotografias",
+        "nombre": "referencia",
+        "tipo": "varchar(1000)",
+        "permiteNulo": "NO",
+        "clave": ""
+      }
+    ],
+    "recolecciones": [
+      {
+        "tabla": "recolecciones",
+        "nombre": "reservaId",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "PRI"
+      },
+      {
+        "tabla": "recolecciones",
+        "nombre": "posicion",
+        "tipo": "int",
+        "permiteNulo": "NO",
+        "clave": "PRI"
+      },
+      {
+        "tabla": "recolecciones",
+        "nombre": "articuloId",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "MUL"
+      },
+      {
+        "tabla": "recolecciones",
+        "nombre": "buenas",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "recolecciones",
+        "nombre": "danadas",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "recolecciones",
+        "nombre": "faltantes",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      }
+    ],
+    "reservas": [
+      {
+        "tabla": "reservas",
+        "nombre": "id",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "PRI"
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "clienteId",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "MUL"
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "desde",
+        "tipo": "varchar(10)",
+        "permiteNulo": "NO",
+        "clave": "MUL"
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "hasta",
+        "tipo": "varchar(10)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "dias",
+        "tipo": "int",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "rentaCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "depositoCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "totalInicialCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "direccionEntrega",
+        "tipo": "varchar(500)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "estado",
+        "tipo": "enum('apartada','entregada','devuelta','cancelada')",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "creadaEn",
+        "tipo": "varchar(35)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "entregaReal",
+        "tipo": "varchar(35)",
+        "permiteNulo": "YES",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "entregaFecha",
+        "tipo": "varchar(10)",
+        "permiteNulo": "YES",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "recoleccionReal",
+        "tipo": "varchar(35)",
+        "permiteNulo": "YES",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "recoleccionFecha",
+        "tipo": "varchar(10)",
+        "permiteNulo": "YES",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "canceladaEn",
+        "tipo": "varchar(35)",
+        "permiteNulo": "YES",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "motivoCancelacion",
+        "tipo": "varchar(500)",
+        "permiteNulo": "YES",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "solicitadaEn",
+        "tipo": "varchar(35)",
+        "permiteNulo": "YES",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "motivoSolicitud",
+        "tipo": "varchar(500)",
+        "permiteNulo": "YES",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "politicaSolicitud",
+        "tipo": "varchar(1000)",
+        "permiteNulo": "YES",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "rentaCobradaCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "depositoCobradoCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "depositoDevueltoCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "depositoDevueltoEn",
+        "tipo": "varchar(35)",
+        "permiteNulo": "YES",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "cargoIncidenciasCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "reservas",
+        "nombre": "saldoIncidenciasCentavos",
+        "tipo": "bigint",
+        "permiteNulo": "NO",
+        "clave": ""
+      }
+    ],
+    "schema_migrations": [
+      {
+        "tabla": "schema_migrations",
+        "nombre": "nombre",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "PRI"
+      },
+      {
+        "tabla": "schema_migrations",
+        "nombre": "sha256",
+        "tipo": "char(64)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "schema_migrations",
+        "nombre": "aplicadaEn",
+        "tipo": "timestamp",
+        "permiteNulo": "NO",
+        "clave": ""
+      }
+    ],
+    "usuarios": [
+      {
+        "tabla": "usuarios",
+        "nombre": "id",
+        "tipo": "varchar(100)",
+        "permiteNulo": "NO",
+        "clave": "PRI"
+      },
+      {
+        "tabla": "usuarios",
+        "nombre": "nombre",
+        "tipo": "varchar(120)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "usuarios",
+        "nombre": "correo",
+        "tipo": "varchar(254)",
+        "permiteNulo": "NO",
+        "clave": "UNI"
+      },
+      {
+        "tabla": "usuarios",
+        "nombre": "telefono",
+        "tipo": "varchar(30)",
+        "permiteNulo": "NO",
+        "clave": ""
+      },
+      {
+        "tabla": "usuarios",
+        "nombre": "rol",
+        "tipo": "enum('administrador','cliente')",
+        "permiteNulo": "NO",
+        "clave": ""
+      }
+    ]
+  },
+  "relaciones": [
+    {
+      "origen": "ajustes",
+      "columna": "articuloId",
+      "destino": "articulos",
+      "columnaDestino": "id"
+    },
+    {
+      "origen": "bloqueos",
+      "columna": "articuloId",
+      "destino": "articulos",
+      "columnaDestino": "id"
+    },
+    {
+      "origen": "bloqueos",
+      "columna": "reservaId",
+      "destino": "reservas",
+      "columnaDestino": "id"
+    },
+    {
+      "origen": "credenciales",
+      "columna": "usuarioId",
+      "destino": "usuarios",
+      "columnaDestino": "id"
+    },
+    {
+      "origen": "detalles_reserva",
+      "columna": "articuloId",
+      "destino": "articulos",
+      "columnaDestino": "id"
+    },
+    {
+      "origen": "detalles_reserva",
+      "columna": "reservaId",
+      "destino": "reservas",
+      "columnaDestino": "id"
+    },
+    {
+      "origen": "fotografias",
+      "columna": "articuloId",
+      "destino": "articulos",
+      "columnaDestino": "id"
+    },
+    {
+      "origen": "recolecciones",
+      "columna": "articuloId",
+      "destino": "articulos",
+      "columnaDestino": "id"
+    },
+    {
+      "origen": "recolecciones",
+      "columna": "reservaId",
+      "destino": "reservas",
+      "columnaDestino": "id"
+    },
+    {
+      "origen": "reservas",
+      "columna": "clienteId",
+      "destino": "usuarios",
+      "columnaDestino": "id"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+[
+  {
+    "metodo": "GET",
+    "ruta": "/salud",
+    "rol": "Público",
+    "exito": "200",
+    "descripcion": "Comprobar conexión real a MySQL"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/usuarios",
+    "rol": "Público",
+    "exito": "201",
+    "descripcion": "Registrar una cuenta cliente"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/usuarios",
+    "rol": "Administrador",
+    "exito": "200",
+    "descripcion": "Consultar usuarios sin credenciales"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/sesiones",
+    "rol": "Público",
+    "exito": "200",
+    "descripcion": "Obtener credencial con expiración"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/usuarios/me",
+    "rol": "Autenticado",
+    "exito": "200",
+    "descripcion": "Consultar el perfil propio"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/articulos",
+    "rol": "Público",
+    "exito": "200",
+    "descripcion": "Explorar por nombre categoría y precio"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/articulos",
+    "rol": "Administrador",
+    "exito": "201",
+    "descripcion": "Crear un artículo"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/inventario",
+    "rol": "Administrador",
+    "exito": "200",
+    "descripcion": "Consultar todos los artículos incluidos los inactivos"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/articulos/{id}",
+    "rol": "Público",
+    "exito": "200",
+    "descripcion": "Consultar un artículo activo"
+  },
+  {
+    "metodo": "PUT",
+    "ruta": "/articulos/{id}",
+    "rol": "Administrador",
+    "exito": "200",
+    "descripcion": "Reemplazar datos del catálogo conservando existencias"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/articulos/{id}/disponibilidad",
+    "rol": "Público",
+    "exito": "200",
+    "descripcion": "Consultar disponibilidad por fechas"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/cotizaciones",
+    "rol": "Público",
+    "exito": "200",
+    "descripcion": "Cotizar sin apartar piezas"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/reservas",
+    "rol": "Cliente propio o administrador",
+    "exito": "201",
+    "descripcion": "Confirmar y apartar una reserva"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/reservas",
+    "rol": "Cliente propio o administrador",
+    "exito": "200",
+    "descripcion": "Consultar reservas e historial según el rol"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/reservas/{id}",
+    "rol": "Cliente propio o administrador",
+    "exito": "200",
+    "descripcion": "Abrir una reserva propia o administrativa"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/reservas/{id}/solicitudes-cancelacion",
+    "rol": "Cliente propietario",
+    "exito": "201",
+    "descripcion": "Solicitar cancelación de una reserva propia"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/reservas/{id}/cancelacion",
+    "rol": "Administrador",
+    "exito": "201",
+    "descripcion": "Aprobar cancelación y liberar piezas"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/reservas/{id}/entrega",
+    "rol": "Administrador",
+    "exito": "201",
+    "descripcion": "Registrar salida y cobros exactos"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/reservas/{id}/recoleccion",
+    "rol": "Administrador",
+    "exito": "201",
+    "descripcion": "Registrar retorno daños y faltantes"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/reservas/{id}/devoluciones-deposito",
+    "rol": "Administrador",
+    "exito": "201",
+    "descripcion": "Registrar la devolución de la garantía"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/articulos/{id}/ajustes",
+    "rol": "Administrador",
+    "exito": "201",
+    "descripcion": "Ajustar existencias con motivo"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/ajustes",
+    "rol": "Administrador",
+    "exito": "200",
+    "descripcion": "Consultar la bitácora de existencias"
+  },
+  {
+    "metodo": "POST",
+    "ruta": "/bloqueos",
+    "rol": "Administrador",
+    "exito": "201",
+    "descripcion": "Bloquear piezas para mantenimiento"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/bloqueos",
+    "rol": "Administrador",
+    "exito": "200",
+    "descripcion": "Consultar bloqueos de mantenimiento daños y faltantes"
+  },
+  {
+    "metodo": "PATCH",
+    "ruta": "/bloqueos/{id}",
+    "rol": "Administrador",
+    "exito": "200",
+    "descripcion": "Registrar el último día fuera de servicio"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/calendario",
+    "rol": "Administrador",
+    "exito": "200",
+    "descripcion": "Consultar entregas y recolecciones programadas"
+  },
+  {
+    "metodo": "GET",
+    "ruta": "/resumen",
+    "rol": "Administrador",
+    "exito": "200",
+    "descripcion": "Consultar el resumen del negocio"
+  }
+]

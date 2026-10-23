@@ -1,0 +1,14 @@
+{
+  "instalacionLimpia": true,
+  "dependenciasDesdeLock": true,
+  "baseNueva": true,
+  "migracionesAplicadas": 2,
+  "usuariosArranque": 2,
+  "articulosArranque": 2,
+  "pruebasDominio": 33,
+  "escenariosIntegracion": 73,
+  "rutasSwagger": 27,
+  "arranqueHttp": true,
+  "autenticacionReal": true,
+  "secretosPublicados": false
+}

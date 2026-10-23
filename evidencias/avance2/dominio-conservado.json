@@ -1,0 +1,22 @@
+[
+  {
+    "ruta": "src/dominio/calculos.ts",
+    "sha256": "4319225970fe858b059e278c826f799c34e1c3cc13ccb635b6185d252f484b0e"
+  },
+  {
+    "ruta": "src/dominio/errores.ts",
+    "sha256": "8d23577be8a9dbb9bf904ddd47ed7d1d2213dcc6bb04a6f5068fe08b53f7d7cc"
+  },
+  {
+    "ruta": "src/dominio/modelo.ts",
+    "sha256": "c0e279398384276c547f06a0d65893a3f06d02a039d17b1907a5bf2284bd40bc"
+  },
+  {
+    "ruta": "src/dominio/puertos.ts",
+    "sha256": "ad22136c23cf784ba7655ac5bc9ba03a1bceb93f3ec853981a0cfe572ab63811"
+  },
+  {
+    "ruta": "src/dominio/renta.service.ts",
+    "sha256": "d0d19ba37ab99df7f7f85962ad074142387722242344cc1888b7fb29ae79ca62"
+  }
+]

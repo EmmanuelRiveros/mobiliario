@@ -1,0 +1,12 @@
+{"metodo":"GET","ruta":"/salud","estado":200,"duracionMs":5.468800000000101}
+{"metodo":"POST","ruta":"/sesiones","estado":200,"duracionMs":87.34629999999993}
+{"metodo":"POST","ruta":"/sesiones","estado":200,"duracionMs":73.35320000000002}
+{"metodo":"POST","ruta":"/articulos","estado":401,"duracionMs":1.041300000000092}
+{"metodo":"POST","ruta":"/articulos","estado":403,"duracionMs":2.9284000000000106}
+{"metodo":"POST","ruta":"/articulos","estado":201,"duracionMs":10.40910000000008}
+{"metodo":"POST","ruta":"/reservas","estado":201,"duracionMs":49.42710000000011}
+{"metodo":"POST","ruta":"/reservas","estado":409,"duracionMs":6.991800000000012}
+{"metodo":"POST","ruta":"/articulos/:id/ajustes","estado":409,"duracionMs":6.626999999999953}
+{"metodo":"POST","ruta":"/articulos","estado":401,"duracionMs":0.6918000000000575}
+{"metodo":"GET","ruta":"/articulos/:id/disponibilidad","estado":200,"duracionMs":5.084299999999985}
+{"metodo":"GET","ruta":"/articulos/:id/disponibilidad","estado":200,"duracionMs":4.649699999994482}
